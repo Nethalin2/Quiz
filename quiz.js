@@ -20,6 +20,8 @@ let questions = [
         choiceB : "placeholder",
         choiceC : "validate",
         correct: "A"
+    
+    
     },{
         question: "Where in an HTML document is the correct place to refer to an external style sheet?",
         imgSrc : "img/css.png",
@@ -199,7 +201,7 @@ const renderCounter = () => {
 const checkAnswer = (answer) => {
     if( answer == questions[runningQuestion].correct){
         // answer is correct
-        score++;
+        score += 10 - count;
         // change progress color to green
         answerIsCorrect();
     }else{
@@ -230,12 +232,12 @@ const  answerIsWrong = () => {
 
 const scoreRender = () => {
     scoreContainer.style.display = "block";
-    let scorePerCent = Math.round(100 * score / questions.length);
-    let img = (scorePerCent >= 80) ? "img/5.png" :
-              (scorePerCent >= 60) ? "img/4.png" :
-              (scorePerCent >= 40) ? "img/3.png" :
-              (scorePerCent >= 20) ? "img/2.png" : "img/1.png";
+    let scorePerCent = score;
+    let img = (scorePerCent >= 100) ? "img/5.png" :
+              (scorePerCent >= 80) ? "img/4.png" :
+              (scorePerCent >= 60) ? "img/3.png" :
+              (scorePerCent >= 40) ? "img/2.png" : "img/1.png";
 
-    scoreContainer.innerHTML = "<img src=" +img +"><p>" + scorePerCent + "%</p>";         
+    scoreContainer.innerHTML = "<img src=" +img +"><p>" + scorePerCent + " points out of 135</p>";         
 
 }
