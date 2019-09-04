@@ -238,6 +238,6 @@ const scoreRender = () => {
               (scorePerCent >= 60) ? "img/3.png" :
               (scorePerCent >= 40) ? "img/2.png" : "img/1.png";
 
-    scoreContainer.innerHTML = "<img src=" +img +"><p>" + scorePerCent + " points out of 135</p>";         
+    scoreContainer.innerHTML = "<img src=" +img +"><p>" + scorePerCent + " points out of 135</p> <input class='button' type='button' value='Reset' onClick='document.location.reload(true)'>";         
 
 }
